@@ -1,0 +1,1 @@
+{"feature_cols": ["cohort_month_str", "customer_state", "rev_1m", "n_orders_1m", "rev_3m", "n_orders_3m"], "cat_cols": ["cohort_month_str", "customer_state"], "num_cols": ["rev_1m", "n_orders_1m", "rev_3m", "n_orders_3m"], "target": "ltv_12m", "note": "Model trained with log1p(target) transformation. Use inv: expm1."}
