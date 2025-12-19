@@ -4,14 +4,14 @@ This is a compact, actionable analysis and ML pipeline that estimates 12‑month
 e‑commerce marketplace using the public Olist dataset. It’s built to be interview- and recruiter-friendly: clear business    
 question, reproducible steps, one baseline model, and practical recommendations a product or marketing team can act on.  
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## What this project does (one sentence)?
 
 Compute cohort revenue and retention, build $LTV_{12m}$ labels, train a simple predictive model using the first 1–3 months of     
 customer behaviour, and show business‑facing metrics (MAE, decile evaluation, revenue capture).  
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## Why this matters?                                                       
 
@@ -23,7 +23,7 @@ If you run acquisition or CRM, you need to know:
 
 This project shows how to answer those questions with data and turn the answers into practical actions.  
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## Data 
 
@@ -42,7 +42,7 @@ Optional (better segmentation if present):
 
 (Repository does not include the raw CSVs.)   
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## Core pipeline (short)                                                    
 
@@ -54,7 +54,7 @@ Optional (better segmentation if present):
 6. Baseline model: GradientBoostingRegressor on $log1p(LTV_{12m})$.                                                               
 7. Business metrics: MAE/RMSE on original scale, decile MAE, and revenue capture by top predicted deciles.
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## Key results (TL;DR)                                                     
 
@@ -64,7 +64,7 @@ Optional (better segmentation if present):
 - Baseline model: low MAE (~ a few currency units ≈ $3–4\%$ of median $LTV$) and useful ranking power — the top predicted $10\%$     
    capture a substantial share of realized revenue (see notebook for exact number).                                         
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## Practical recommendations                                                  
 
@@ -73,7 +73,7 @@ Optional (better segmentation if present):
 - Bid CAC and allocate channels by predicted LTV instead of a single average.                                               
 - Use predicted LTV to target experiments and CRM flows (test richer experiences for high‑predicted‑LTV users).             
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## What’s in the repo                                                      
 
@@ -85,7 +85,7 @@ Optional (better segmentation if present):
 - **tests/** — minimal unit tests.                                                                                              
 - **Dockerfile**, **requirements.txt**, **README.md**.                                                                                  
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## Quick start (run locally)                                                  
 
@@ -116,7 +116,7 @@ curl -X POST "http://localhost:8000/predict" \
       -d '{"cohort_month_str":"2017-01","customer_state":"SP","rev_1m":10,"n_orders_1m":1,"rev_3m":10,"n_orders_3m":1}' 
 ```                                                                                                                         
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
  ## Reproducibility notes                                                    
 
@@ -125,7 +125,7 @@ curl -X POST "http://localhost:8000/predict" \
 - For demo convenience, include **data/model_df_demo.csv** (small sample) and a prebuilt models/model_demo.joblib so reviewers  
    can run the demo in <5 minutes.                                                                                           
 
-─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+---
 
 ## Next improvements
 
@@ -133,6 +133,8 @@ curl -X POST "http://localhost:8000/predict" \
 - Add product/seller features, inter‑purchase timing, and richer models (XGBoost / LightGBM).                               
 - Report business metrics (decile MAE, revenue capture, CAC payback) and embed the model in a small dashboard or API for    
    stakeholders.                                                                                                             
+
+
 
 
 
