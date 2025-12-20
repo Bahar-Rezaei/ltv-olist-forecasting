@@ -1,25 +1,25 @@
 # Customer LTV & Cohort Forecasting — Olist case study   
 
-This is a compact, actionable analysis and ML pipeline that estimates 12‑month customer lifetime value ($LTV_{12m}$) for an       
-e‑commerce marketplace using the public Olist dataset. It’s built to be interview- and recruiter-friendly: clear business    
+This is a compact, actionable analysis and ML pipeline that estimates 12‑month customer lifetime value ($LTV_{12m}$) for an  
+e‑commerce marketplace using the public Olist dataset. It’s built to be interview- and recruiter-friendly: clear business  
 question, reproducible steps, one baseline model, and practical recommendations a product or marketing team can act on.  
 
 ---
 
 ## What this project does (one sentence)?
 
-Compute cohort revenue and retention, build $LTV_{12m}$ labels, train a simple predictive model using the first 1–3 months of     
+Compute cohort revenue and retention, build $LTV_{12m}$ labels, train a simple predictive model using the first 1–3 months of  
 customer behaviour, and show business‑facing metrics (MAE, decile evaluation, revenue capture).  
 
 ---
 
-## Why this matters?                                                       
+## Why this matters?  
 
-If you run acquisition or CRM, you need to know:                                                                             
+If you run acquisition or CRM, you need to know:  
 
 - How much a new customer is worth over 12 months.                                                                          
 - Which cohorts/regions/categories bring the best customers.                                                                
-- When to invest in onboarding and retention to get the most return.                                                        
+- When to invest in onboarding and retention to get the most return.
 
 This project shows how to answer those questions with data and turn the answers into practical actions.  
 
@@ -38,7 +38,10 @@ Required (place in **data/**):
 
 Optional (better segmentation if present):                                                                                   
 
-- olist_order_items_dataset.csv, olist_products_dataset.csv, olist_sellers_dataset.csv, olist_order_reviews_dataset.csv     
+- olist_order_items_dataset.csv,
+- olist_products_dataset.csv,
+- olist_sellers_dataset.csv,
+- olist_order_reviews_dataset.csv     
 
 (Repository does not include the raw CSVs.)   
 
@@ -101,7 +104,7 @@ pip install -r requirements.txt
 ```
 3. Download Olist CSVs from Kaggle and put required files in **data/**.
 
-4. For a fast review, open **notebooks/ltv_demo.ipynb** — it uses a small preprocessed sample and either trains a quick model or
+4. For a fast review, open **notebooks/ltv_demo.ipynb** — it uses a small preprocessed sample and either trains a quick model or  
    loads **models/model_demo.joblib** if present.
 
 5. To run the API (if **models/model.joblib** exists):
@@ -118,21 +121,21 @@ curl -X POST "http://localhost:8000/predict" \
 
 ---
 
- ## Reproducibility notes                                                    
+ ## Reproducibility notes 
 
 - The notebook writes **data/model_df.csv** (one row per customer) so the modeling and API scripts can run without reprocessing 
-   raw tables.                                                                                                               
+   raw tables.  
 - For demo convenience, include **data/model_df_demo.csv** (small sample) and a prebuilt models/model_demo.joblib so reviewers  
-   can run the demo in <5 minutes.                                                                                           
+   can run the demo in <5 minutes. 
 
 ---
 
-## Next improvements
+## Next improvements  
 
-- Use strict time‑based train/test splits for deployment realism.                                                           
-- Add product/seller features, inter‑purchase timing, and richer models (XGBoost / LightGBM).                               
-- Report business metrics (decile MAE, revenue capture, CAC payback) and embed the model in a small dashboard or API for    
-   stakeholders.                                                                                                             
+- Use strict time‑based train/test splits for deployment realism.  
+- Add product/seller features, inter‑purchase timing, and richer models (XGBoost / LightGBM).  
+- Report business metrics (decile MAE, revenue capture, CAC payback) and embed the model in a small dashboard or API for
+   stakeholders. 
 
 
 
